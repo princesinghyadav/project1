@@ -1,0 +1,192 @@
+ *{
+  background-color: white;
+ }
+
+#top{
+  height: 50px;
+  background-color: yellow;
+  padding-top: 3px;
+}
+#toop{
+  margin: auto;
+  width: 60%;
+  height: 23px;
+  margin-top: 10px;
+}
+
+/* search tag */
+#search{
+
+display: flex;
+height: 60px;
+/* background-color:whitesmoke; */
+color: black;
+width: 85%;
+justify-content: space-around;
+padding: 20px;
+/* border: 2px solid red; */
+margin: auto;
+}
+#search>div{
+
+height: 30px;
+margin-top: 20px;
+}
+#input{
+height: 30px;
+width: 160%;
+border-radius: 15px;
+/* margin-top: 20px; */
+margin-right: 0px;
+ 
+}
+#search>div>img{
+width: 30%;
+height: 35px;
+}
+.p{
+
+height: 30px;
+}
+
+
+
+/* Nav bar  */
+#Nav>div>div{
+  background-color: black;
+}
+#Nav{
+  background-color: black;
+}
+#Navbar{
+background-color:black;
+display: flex;
+justify-content: space-around;
+height: 60px;
+width: 80%;
+margin: auto;
+}
+
+#Navbar>div>a>h4{
+color: white;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/* text-decoration: none; */
+background-color: black;
+
+}
+
+/*  product page  */
+#product{
+display: grid;
+grid-template-columns: repeat(6,1fr);
+gap: 10px;
+margin: 15px;
+
+
+}
+
+#imgtag{
+height: 400px;
+
+}
+#products{
+  background-color: black;
+  /* border: 3px solid red; */
+}
+
+
+
+#cover{
+background-color: black;
+/* color: white; */
+/* border: 3px solid green; */
+height: 150px;
+}
+#cover>h1{
+  background-color: black;
+  color: white;
+}
+#cover>p{
+  background-color: black;
+  color: white;
+}
+#cover>h3{
+  background-color: black;
+  color: white;
+}
+
+
+/*   choosen  */
+#pro{
+
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+#produ{
+display: grid;
+gap: 12px;
+margin-left: 120px;
+width: 100%;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+grid-template-columns: repeat(10,1fr);
+/* height: 250px; */
+}
+#productt{
+  display: grid;
+  gap: 28px;
+  width: 75%;
+  margin: auto;
+  height: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+  grid-template-columns: repeat(10,1fr);
+  /* width: 140%; */
+
+}
+#imu{
+height: 250px;
+
+}
+#prince{
+  background-color: whitesmoke;
+  color:black;
+}
+body{
+  background-color: black;
+  color:black;
+  /* padding: 8px; */
+}
+.line{
+  width: 100%;
+  height: 375px; 
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  
+}
+a {
+  color: red; 
+  text-decoration: underline; 
+}
+
+a:hover {
+  color: rgb(255, 0, 238); 
+}
+.shashi{
+  height: 450px;
+  width: 80%;
+  text-decoration: underline;
+   
+}
+.n1{
+  padding: end 5px; ;
+}
+.n1{
+  height: 2px;
+  width: 1px;
+} 
+button{
+  background-color: gray;
+  color:red;
+}

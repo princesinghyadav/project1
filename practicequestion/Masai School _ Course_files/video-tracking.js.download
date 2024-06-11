@@ -1,0 +1,57 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const iframe = document.querySelector("iframe");
+  const video = document.getElementById("lecture-video");
+
+  // console.log("I am listening");
+
+  function storeProgress(progress, percentageProgress, videoId) {
+    fetch("/store-video-progress", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+        "laravel_session": document.cookie.split("=")[1].split(";")[0],
+      },
+      body: JSON.stringify({
+        video_id: videoId,
+        progress: percentageProgress,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+
+  if (iframe) {
+    const player = new Vimeo.Player(iframe);
+    player.on("timeupdate", (event) => {
+      const currentTime = event.seconds;
+      const videoId = iframe.dataset.lectureId;
+      const videoDuration = player.getDuration().then(duration => duration);
+
+      const percentageProgress = (currentTime / videoDuration) * 100;
+
+      if (Math.floor(currentTime) % 60 === 0) {
+        storeProgress(currentTime, percentageProgress, videoId);
+      }
+    });
+  } else if (video) {
+    video.addEventListener("timeupdate", () => {
+      const currentTime = video.currentTime;
+      const videoId = video.dataset.lectureId;
+      const videoDuration = video.duration;
+
+      const percentageProgress = (currentTime / videoDuration) * 100;
+
+      if (Math.floor(currentTime) % 60 === 0) {
+        storeProgress(currentTime, percentageProgress, videoId);
+      }
+    });
+  } else {
+    // console.log("I am not listening to anything")
+  }
+});

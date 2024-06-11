@@ -1,0 +1,106 @@
+ <!-- Functionality
+By clicking on any number it shows up in the score box joined to any previous numbers already present
+ (Eg: To enter a score of 423 you have to press 4 2 3)
+Once the button ENTER is pressed the score gets compared with the MIN and MAX boxes,
+ if the current score is less than the MIN score it gets updated with the current score, 
+ if the current score is greater than the MAX score it gets updated with the current score
+The SCORE box will be reset with empty value  -->
+ 
+
+<!DOCTYPE html>
+<html lang=""eng>
+    <head> 
+        <title> score board</title>
+        <style>
+       #score{
+        border: 2px solid red;
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+        margin: auto;
+       }
+       #score>div{
+        border: 2px solid red;
+       }
+       #but{
+        border: 2px solid blue;
+        height: 200px;
+        width: 30%;
+        margin: auto;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        
+
+        
+       }
+       #but>button{
+        margin-bottom: 5%;
+        margin-right: 5%;
+        margin-right: 5%;
+
+        
+       }
+
+        </style>
+    </head>
+    <body>
+        <h1 > </h1>
+        <div id="score"  >
+            <div id="min"> <h1> 100</h1></div>
+            <div id="display"><h1>display</h1> </div>
+            <div id="max"><h1>1000</h1></div>
+            
+        </div>
+        <div id="but">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>0</button>
+            <button id="check" onclick="checkm()">enter</button>
+        </div>
+
+    </body>
+    <script>
+        let bag =""
+        let min=document.getElementById("min")
+        let max=document.getElementById("max")
+        let display=document.getElementById("display")
+        let but=document.querySelectorAll("#but>button")
+        for( let i=0;i<but.length-1;i++){
+           but[i].addEventListener("click", my )
+           function my (){
+           // let bag=" "
+            bag += but[i].textContent
+            display.innerText=bag
+          
+           }
+           
+           }
+           function checkm(){
+         
+            if(Number(bag) < Number(min.textcontent)){
+            
+                min.textContent=bag
+            }
+            else if (Number(bag) > Number(max.textContent)){
+                max.textContent=bag
+            }  // console.log(typeof(min.textContent),min.textContent)
+            }
+           
+            
+            
+           
+            
+        
+    </script>
+    </html>
+
+
+
